@@ -2,6 +2,8 @@
 from django.shortcuts import render
 from django.views.generic.detail import DetailView   # 👈 ADD THIS LINE
 from .models import Author, Book, Library, Librarian
+from .models import Library
+from django.views.generic.detail import DetailView
 
 
 # Function-based view for listing all books
@@ -11,6 +13,7 @@ def list_books(request):
 
 
 # Class-based view for a library detail
+
 class LibraryDetailView(DetailView):
     model = Library
     template_name = "relationship_app/library_detail.html"
